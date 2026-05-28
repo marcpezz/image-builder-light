@@ -17,7 +17,7 @@ RUN echo "/opt/conda/bin/conda init > /dev/null " >> /etc/profile.d/conda.sh && 
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb && \
     dpkg -i cuda-keyring_1.1-1_all.deb && apt update && apt install -y cuda-toolkit
 
-RUN conda create -n MTK -y python=3.11.5 
+RUN conda create -n MTK -y python=3.11.5 \
     pytorch torchvision torchaudio pytorch-cuda=12.4 \
     numpy scipy pandas h5py tqdm matplotlib seaborn scikit-learn umap-learn \
     ipykernel \
