@@ -62,3 +62,5 @@ RUN echo "/opt/conda/bin/conda init > /dev/null " >> /etc/profile.d/conda.sh && 
     echo "export PATH=\"$PATH:/usr/local/cuda-13.0/bin\" " >> /etc/profile.d/cudatoolkit.sh && \
     echo "exec /bin/bash" >> /etc/profile
 
+
+WORKDIR /home/jupyter
