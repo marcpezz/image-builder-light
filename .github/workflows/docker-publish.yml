@@ -1,5 +1,23 @@
 name: Create and publish a Docker image
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          docker image prune -af
+          df -h
+      
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      # ... rest of your steps
+
+
 # Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
   push:
